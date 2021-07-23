@@ -1,0 +1,34 @@
+MVC (Model-View-Controller) Architectural Pattern là một trong những mẫu kiến trúc để triển khai người dùng giao diện.
+
+Mặc dù ban đầu nó được phát triển cho các ứng dụng máy tính để bàn trở về trước vào những năm 1970, nó được chấp nhận rộng rãi như một kiến trúc cho các ứng dụng web.
+Và kết quả là nhiều khuôn khổ đã được tạo ra để thực thi mẫu này. 
+ASP.NET MVC là một trong số chúng. 
+Có nhiều khuôn khổ MVC tương tự khác như Ruby on Rails hoặc Express để ghi chú trong mô hình ứng dụng MVC đại diện.
+
+MODEL
+Model: dữ liệu ứng dụng và hành vi về miền vấn đè của nó và độc lập với UI (giao diện người dùng).
+Ví dụ, chẳng hạn như trong ứng dụng cho thuê video của (Programming with Mosh), Mô hình Model của họ sẽ bao gồm các lớp như giao dịch Transaction, cho thuê Rental, phim Movies, khách hàng Customer...
+Trên các lớp này có các thuộc tính và phương thức hoàn toàn đại diện cho trạng thái của ứng dụng và các quy tắc. Chúng không bị ràng buộc với giao diện người dùng.
+Có nghĩa là chúng ta có thể tham gia các class này và sử dụng chúng trong một loại ứng dụng khác như máy tính để bàn hoặc ứng dụng dành cho thiết bị di động mà họ đang phát các đối tượng CLR cũ hoặc POCOs (Plain Old CLR Objects) v trong MVC
+
+VIEW
+View: đại diện cho chế độ xem và là đánh dấu HTML mà họ hiển thị cho người dùng
+
+CONTROLLER:
+Controller: là một bộ điều khiển chịu trách nhiệm xử lý một yêu cầu HTTP
+
+Ví dụ, hãy tưởng tượng ứng dụng của họ được lưu trữ tại vidly.com
+Khi họ gửi yêu cầu http://vidly.com/movies thì một bộ điều khiển CONTROLLER sẽ được chọn để xử lý yêu cầu này.
+Bộ điều khiển Controller đó sẽ lấy tất cả các phim movies từ cơ sở dữ liệu DATABASE (từ Model) đưa chúng vào chế độ xem (View) cho máy khách client hoặc trình duyệt browser
+Như vậy, Với kiến trúc này, bạn xem mỗi thành phần có 1 trách nhiệm riêng biệt và điều này dẫn đến tách biệt tốt hơn các mối quan tâm và 1 ứng dụng dễ bảo trì hơn hiện có.
+
+ROUTER:
+Một phần nữa của kiến trúc MVC này mà không có trong từ viết tắt MVC nhưng thực sự không phải lúc nào cũng có một bộ định tuyến Router.
+Trước đó, khi có yêu cầu trong ứng dụng, một bộ điều khiển sẽ được chọn để xử lý yêu cầu đó
+Chọn bộ điều khiển phù hợp là trách nhiệm của một bộ định tuyến Router.
+Một bộ định tuyến dựa trên một số quy tắc biết rằng yêu cầu với các phim có dấu gạch chéo URL phải là được xử lý bởi lớp được gọi là bộ điều khiển phim chính xác hơn, nó sẽ được xử lý bởi một trong các phương thức của lớp này vì lớp có thể có nhiều các phương thức khác nhau trong asp.net MVC,
+				MoviesController
+vidly.com/movies ===> ROUTER ===> CONTRONLLER
+
+họ đề cập đến các phương thức của một bộ điều khiển như các hành động vì vậy sẽ chính xác hơn khi nói rằng một hành động trong bộ điều khiển là chịu trách nhiệm xử lý một yêu cầu vì vậy đây là một MVC đột ngột trong ba phút 
+M V C R
