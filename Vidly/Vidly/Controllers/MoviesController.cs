@@ -20,7 +20,9 @@ namespace Vidly.Controllers
 
             //return Content("Hello World!");
 
-            return HttpNotFound();
+            //return HttpNotFound();
+
+            return new EmptyResult();
         }
     }
 }
